@@ -9,7 +9,7 @@
         "~/Library/Arduino15/libraries/**",
         "~/Documents/Arduino/libraries/**"
       ],
-      "defines": [],
+      "defines": ["USBCON"], // For Serial communication
       "macFrameworkPath": [
         "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
       ],
