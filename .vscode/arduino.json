@@ -1,6 +1,4 @@
 {
-  "port": "/dev/tty.usbmodem13201",
-  "arduino.path": "/Applications",
-  "arduino.commandPath": "Contents/MacOS/run-arduino.sh",
-  "arduino.useArduinoCli": true
+    "board": "arduino:avr:uno",
+    "port": "/dev/tty.usbmodem13301"
 }
