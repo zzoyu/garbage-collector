@@ -13,24 +13,29 @@ void setup() {
   jointAxis.write(0);
   pinMode(PIN_SENSOR_SHOCK, INPUT);
   attachInterrupt(digitalPinToInterrupt(PIN_SENSOR_SHOCK), handleShock, RISING);
+
+  displayInit();
 }
 
 void loop() {  
   distance = distanceSensor.dist();
   Serial.println(distance);
   
-  if (
-    (distance < 10 && distance > 0) ||
-    ( isShock && (millis() - shockTime < 5000) )
-  ) {
+  if ( distance < 10 && distance > 0) {
+    drawSmile();
     openLid();
-  }  
+  }
+  else if ( isShock && (millis() - shockTime < 5000) ) {
+    drawOuch();
+    openLid();
+  }
   else {
     isShock = false;
+    drawNormal();
     closeLid();
   }
 
-  delay(200);
+  delay(200UL);
 }
 
 
